@@ -8,8 +8,8 @@ class JadwalShalatProvider {
   var today = DateTime.now().day;
 
   Future getJadwalShalat() async {
-    // print("month ${month.toString()}");
-    // print("today ${today.toString()}");
+    print("month ${month.toString()}");
+    print("today ${today.toString()}");
     JadwalShalatModel data = await JadwalShalatService().getJadwalShalat(
       month.toString(),
       today.toString(),
@@ -18,23 +18,23 @@ class JadwalShalatProvider {
     _jadwalShalatModel = data;
 
     var tgl = _jadwalShalatModel?.data?.jadwal?.date;
-    // print("tgl $tgl");
+    print("tgl $tgl");
 
     var shalatShubuh = _jadwalShalatModel?.data?.jadwal?.subuh;
-    // print("shalatShubuh $shalatShubuh");
+    print("shalatShubuh $shalatShubuh");
     var shalatDzuhur = _jadwalShalatModel?.data?.jadwal?.dzuhur;
-    // print("shalatDzuhur $shalatDzuhur");
+    print("shalatDzuhur $shalatDzuhur");
     var shalatAshar = _jadwalShalatModel?.data?.jadwal?.ashar;
-    // print("shalatAshar $shalatAshar");
+    print("shalatAshar $shalatAshar");
     var shalatMaghrib = _jadwalShalatModel?.data?.jadwal?.maghrib;
-    // print("shalatMaghrib $shalatMaghrib");
+    print("shalatMaghrib $shalatMaghrib");
     var shalatIsya = _jadwalShalatModel?.data?.jadwal?.isya;
-    // print("shalatIsya $shalatIsya");
+    print("shalatIsya $shalatIsya");
 
     int durasiShubuh = convertTime(tgl.toString(), shalatShubuh.toString());
-    // print("durasiShubuh $durasiShubuh");
+    print("durasiShubuh $durasiShubuh");
     if (durasiShubuh > 0) {
-      // print("masuk notif Shubuh");
+      print("masuk notif Shubuh");
       await NotificationService().showNotifShalat(
         1,
         "Adzan Shubuh",
@@ -44,9 +44,9 @@ class JadwalShalatProvider {
     }
 
     int durasiDzuhur = convertTime(tgl.toString(), shalatDzuhur.toString());
-    // print("durasiDzuhur $durasiDzuhur");
+    print("durasiDzuhur $durasiDzuhur");
     if (durasiDzuhur > 0) {
-      // print("masuk notif Dzuhur");
+      print("masuk notif Dzuhur");
       await NotificationService().showNotifShalat(
         2,
         "Adzan Dzuhur",
@@ -56,9 +56,9 @@ class JadwalShalatProvider {
     }
 
     int durasiAshar = convertTime(tgl.toString(), shalatAshar.toString());
-    // print("durasiAshar $durasiAshar");
+    print("durasiAshar $durasiAshar");
     if (durasiAshar > 0) {
-      // print("masuk notif Ashar");
+      print("masuk notif Ashar");
       await NotificationService().showNotifShalat(
         3,
         "Adzan Ashar",
@@ -68,9 +68,9 @@ class JadwalShalatProvider {
     }
 
     int durasiMaghrib = convertTime(tgl.toString(), shalatMaghrib.toString());
-    // print("durasiMaghrib $durasiMaghrib");
+    print("durasiMaghrib $durasiMaghrib");
     if (durasiMaghrib > 0) {
-      // print("masuk notif Maghrib");
+      print("masuk notif Maghrib");
       await NotificationService().showNotifShalat(
         4,
         "Adzan Maghrib",
@@ -80,9 +80,9 @@ class JadwalShalatProvider {
     }
 
     int durasiIsya = convertTime(tgl.toString(), shalatIsya.toString());
-    // print("durasiIsya $durasiIsya");
+    print("durasiIsya $durasiIsya");
     if (durasiIsya > 0) {
-      // print("masuk notif Isya");
+      print("masuk notif Isya");
       await NotificationService().showNotifShalat(
         5,
         "Adzan Isya",
@@ -98,13 +98,13 @@ class JadwalShalatProvider {
     var inputedStartTime = DateTime.parse("$today $jamShalat");
     var mili = inputedStartTime.millisecondsSinceEpoch / 1000;
     var waktuShalat = mili.toInt();
-    // print("waktuShalat $waktuShalat");
+    print("waktuShalat $waktuShalat");
     DateTime now = DateTime.now();
-    // print("waktu now $now");
+    print("waktu now $now");
     var mili2 = now.millisecondsSinceEpoch / 1000;
     var waktuSekarang = mili2.toInt();
     int durasi = waktuShalat - waktuSekarang;
-    // print('dikurang $durasi');
+    print('dikurang $durasi');
     return durasi;
   }
 }
