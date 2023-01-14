@@ -87,7 +87,7 @@ class NotificationService {
           // timeoutAfter: 100,
           // additionalFlags: Int32List.fromList(<int>[insistentFlag]),
           sound: const RawResourceAndroidNotificationSound('adzan'),
-          largeIcon: const DrawableResourceAndroidBitmap('@drawable/sujud'),
+          largeIcon: const DrawableResourceAndroidBitmap('@drawable/masjid'),
           styleInformation: BigPictureStyleInformation(
             FilePathAndroidBitmap(bigPicturePath),
             largeIcon: FilePathAndroidBitmap(largeIconPath),
