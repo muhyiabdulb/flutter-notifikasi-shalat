@@ -4,6 +4,7 @@ import 'package:flutter_notif_shalat/models/jadwal_shalat.dart';
 import 'package:flutter_notif_shalat/providers/jadwal_shalat_provider.dart';
 import 'package:flutter_notif_shalat/theme.dart';
 import 'package:timezone/data/latest.dart' as tz;
+import 'package:intl/intl.dart';
 
 class MyHomePage extends StatefulWidget {
   final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
@@ -72,6 +73,21 @@ class _MyHomePageState extends State<MyHomePage> {
                           fontSize: 21,
                         ),
                         textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(
+                        height: spaceHeight,
+                      ),
+                      StreamBuilder(
+                        stream: Stream.periodic(const Duration(seconds: 1)),
+                        builder: (context, snapshot) {
+                          return Text(
+                            DateFormat('HH:mm:ss').format(DateTime.now()),
+                            style: blueTextStyle.copyWith(
+                              fontSize: 21,
+                            ),
+                            textAlign: TextAlign.center,
+                          );
+                        },
                       ),
                       const SizedBox(
                         height: spaceHeight,
