@@ -35,7 +35,7 @@ class JadwalShalatProvider {
     print("durasiShubuh $durasiShubuh");
     if (durasiShubuh > 0) {
       print("masuk notif Shubuh");
-      await NotificationService().showNotifShalat(
+      NotificationService().showNotifShalat(
         1,
         "Adzan Shubuh",
         "Waktu shalat Shubuh  sudah masuk",
@@ -47,7 +47,7 @@ class JadwalShalatProvider {
     print("durasiDzuhur $durasiDzuhur");
     if (durasiDzuhur > 0) {
       print("masuk notif Dzuhur");
-      await NotificationService().showNotifShalat(
+      NotificationService().showNotifShalat(
         2,
         "Adzan Dzuhur",
         "Waktu shalat Dzuhur sudah masuk",
@@ -59,7 +59,7 @@ class JadwalShalatProvider {
     print("durasiAshar $durasiAshar");
     if (durasiAshar > 0) {
       print("masuk notif Ashar");
-      await NotificationService().showNotifShalat(
+      NotificationService().showNotifShalat(
         3,
         "Adzan Ashar",
         "Waktu shalat Ashar sudah masuk",
@@ -71,7 +71,7 @@ class JadwalShalatProvider {
     print("durasiMaghrib $durasiMaghrib");
     if (durasiMaghrib > 0) {
       print("masuk notif Maghrib");
-      await NotificationService().showNotifShalat(
+      NotificationService().showNotifShalat(
         4,
         "Adzan Maghrib",
         "Waktu shalat Maghrib sudah masuk",
@@ -83,7 +83,7 @@ class JadwalShalatProvider {
     print("durasiIsya $durasiIsya");
     if (durasiIsya > 0) {
       print("masuk notif Isya");
-      await NotificationService().showNotifShalat(
+      NotificationService().showNotifShalat(
         5,
         "Adzan Isya",
         "Waktu shalat Isya sudah masuk",
